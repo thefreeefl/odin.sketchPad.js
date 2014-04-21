@@ -47,6 +47,7 @@ function updateGrid() {
             clearSlate();
             break;
         default:
+            clear();
             $(".grid-box").on("mouseenter", function () {
                 $(this).css("background", "black");
             });
