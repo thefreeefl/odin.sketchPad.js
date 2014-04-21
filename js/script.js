@@ -3,10 +3,11 @@ $(document).ready(function () {
 });
 
 function init() {
-    var noOfBox = 26;
+    var noOfBox = 16;
     createGrid(noOfBox);
     updateGrid();
     $("button").on("click", updateGrid);
+    $(".noOfBox").on("change", changeGrid);
 }
 
 function createGrid(noOfBox) {
@@ -78,4 +79,11 @@ function getRandomColor() {
     g = Math.ceil(Math.random() * 255);
     b = Math.ceil(Math.random() * 255);
     return ("rgb(" + r + ", " + g + ", " + b + ")");
+}
+
+function changeGrid() {
+    var newBoxCount = this.value;
+    $(".grid-box").remove();
+    createGrid(newBoxCount);
+    updateGrid();
 }
